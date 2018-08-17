@@ -6,6 +6,10 @@ output "vpcarn" {
   value = "${element(concat(aws_vpc.core-network.*.arn, list("")), 0)}"
 }
 
+output "vpcname" {
+  value = "${lookup(aws_vpc.core-network.*.tags, "Name")}"
+}
+
 output "vpc-cidr" {
   value = "${element(concat(aws_vpc.core-network.*.cidr_block, list("")), 0)}"
 }
