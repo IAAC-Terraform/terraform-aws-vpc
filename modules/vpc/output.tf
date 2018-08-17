@@ -7,7 +7,7 @@ output "vpcarn" {
 }
 
 output "vpcname" {
-  value = "${lookup(aws_vpc.core-network.*.tags, "Name")}"
+  value = "${var.name}-0${count.index + 1}"
 }
 
 output "vpc-cidr" {
