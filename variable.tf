@@ -1,4 +1,4 @@
-variable "name" {
+variable "vpc_name" {
   default = ""
 }
 
